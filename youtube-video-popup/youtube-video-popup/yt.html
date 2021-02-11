@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Youtube Video Overlay Plugin Example</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="youtube-overlay.css" rel="stylesheet">
+    <style>
+        .closeIcon>img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px;
+            margin-left: auto
+        }
+
+    </style>
+</head>
+
+<body>
+   
+   
+    <div class="container">
+       
+        <h1>Youtube Video Overlay Plugin Example</h1>
+        
+<!--        <img id="exampleImage" src="alamin.jpg" height="400" width="400" data-videourl="https://gserver-rtg.redtiger.com/rtg/launcher/SylvanSpirits">-->
+        
+        <img id="video1" src="alamin.jpg" height="400" width="400" data-videourl="https://gserver-rtg.redtiger.com/rtg/launcher/SylvanSpirits">
+        
+        <img id="video2" src="alamin.jpg" height="400" width="400" data-videourl="https://gserver-rtg.redtiger.com/rtg/launcher/SylvanSpirits">
+        
+        <img id="video3" src="alamin.jpg" height="400" width="400" data-videourl="https://gserver-rtg.redtiger.com/rtg/launcher/SylvanSpirits">
+        
+    </div>
+
+
+
+
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="youtube-overlay.js"></script>
+    
+    
+    <script>
+        var img = $("#video1");
+        var configObject = {
+            sourceUrl: img.attr("data-videourl"),
+            triggerElement: "#" + img.attr("id"),
+            progressCallback: function() {
+                console.log("Callback Invoked.");
+            }
+        };
+
+        var videoBuild = new YoutubeOverlayModule(configObject);
+        videoBuild.activateDeployment();
+
+    </script>
+    
+    <script>
+        var img = $("#video2");
+        var configObject = {
+            sourceUrl: img.attr("data-videourl"),
+            triggerElement: "#" + img.attr("id"),
+            progressCallback: function() {
+                console.log("Callback Invoked.");
+            }
+        };
+
+        var videoBuild = new YoutubeOverlayModule(configObject);
+        videoBuild.activateDeployment();
+
+    </script>
+    
+<!--
+    <script>
+    
+    var img = $("#video1");
+
+var videoBuild = new YoutubeOverlayModule({
+    sourceUrl: img.attr("data-videourl"),
+    triggerElement: "#" + img.attr("id"),
+    progressCallback: function() {
+      console.log("Callback Invoked.");
+    }
+});
+   
+        var videoBuild = new YoutubeOverlayModule(configObject);
+        videoBuild.activateDeployment();
+        
+    </script>
+-->
+    
+    
+</body>
+
+</html>
